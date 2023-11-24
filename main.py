@@ -10,6 +10,8 @@ def send_welcome(message):
 @bot.message_handler(func=lambda msg: True)
 def thanks(message):
     sign = message.text
+    f = open('db.txt', 'a')
+    f.write(message.text+'\n')
     print(sign)
     sent_msg = bot.send_message(
         message.chat.id, "Дякую за те, що поділилися своїм досвідом! Ви можете доповнити свою історію, або розповісти нову, написавши нам повідомлення.")
