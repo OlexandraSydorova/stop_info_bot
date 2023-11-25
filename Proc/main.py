@@ -10,7 +10,7 @@ def send_welcome(message):
 @bot.message_handler(func=lambda msg: True)
 def thanks(message):
     sign = message.text
-    f = open('db.txt', 'a')
+    f = open('answers.json', 'a')
     f.write(message.text+'\n')
     print(sign)
     sent_msg = bot.send_message(
